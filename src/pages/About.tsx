@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useState} from 'react'
 import '../styles/About.css'
 import aboutBg from '../assets/about-bg.jpg' 
 import { FaUsers, FaShieldAlt } from 'react-icons/fa'
@@ -7,6 +7,19 @@ import AOS from 'aos'
 import 'aos/dist/aos.css'
 
 const About = () => {
+    const [isMobile, setIsMobile] = useState(false)
+  
+    useEffect(() => {
+      const handleResize = () => {
+        setIsMobile(window.innerWidth <= 768)
+      }
+  
+      // Set initially
+      handleResize()
+  
+      window.addEventListener('resize', handleResize)
+      return () => window.removeEventListener('resize', handleResize)
+    }, [])
   useEffect(() => {
     AOS.init({ duration: 1000 })
   }, [])
@@ -45,10 +58,11 @@ const About = () => {
           </p>
         </div>
 
-        {/* Right: Highlight Box + Stats */}
-        <div className="about-side-info">
+        {/* Right: Highlight Box + Stats */}\
+        
+        <div className="about-side-info" {...(!isMobile && { 'data-aos': 'fade-up', 'data-aos-delay': '100' })}>
           {/* Highlight Box */}
-          <div className="highlight-box" data-aos="fade-up" data-aos-delay="100">
+          <div className="highlight-box">
             <h3>We Ensure Your Products Are</h3>
             <ul>
               <li>✔ Affordable</li>
