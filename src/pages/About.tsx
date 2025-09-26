@@ -1,28 +1,28 @@
-import { useEffect, useState} from 'react'
+import { useEffect, useState } from 'react'
 import '../styles/About.css'
-import aboutBg from '../assets/about-bg.jpg' 
+import aboutBg from '../assets/about-bg.jpg'
 import { FaUsers, FaShieldAlt } from 'react-icons/fa'
 import CountUp from 'react-countup'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 
 const About = () => {
-    const [isMobile, setIsMobile] = useState(false)
-  
-    useEffect(() => {
-      const handleResize = () => {
-        setIsMobile(window.innerWidth <= 768)
-      }
-  
-      // Set initially
-      handleResize()
-  
-      window.addEventListener('resize', handleResize)
-      return () => window.removeEventListener('resize', handleResize)
-    }, [])
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768)
+    }
+
+    handleResize()
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
+
   useEffect(() => {
     AOS.init({ duration: 1000 })
   }, [])
+
   useEffect(() => {
     document.body.classList.add('services-page')
     return () => {
@@ -36,8 +36,11 @@ const About = () => {
       <section
         className="about-hero"
         style={{ backgroundImage: `url(${aboutBg})` }}
+        data-aos="fade-in"
       >
-        <h1 className="about-title" data-aos="fade-up">WHY CHOOSE US</h1>
+        <h1 className="about-title" data-aos="fade-up">
+          WHY CHOOSE US
+        </h1>
       </section>
 
       {/* Info + Stats Section */}
@@ -58,10 +61,14 @@ const About = () => {
           </p>
         </div>
 
-        {/* Right: Highlight Box + Stats */}\
-        
-        <div className="about-side-info" {...(!isMobile && { 'data-aos': 'fade-up', 'data-aos-delay': '100' })}>
-          {/* Highlight Box */}
+        {/* Right: Highlight Box + Stats */}
+        <div
+          className="about-side-info"
+          {...(!isMobile && {
+            'data-aos': 'fade-up',
+            'data-aos-delay': '100',
+          })}
+        >
           <div className="highlight-box">
             <h3>We Ensure Your Products Are</h3>
             <ul>
@@ -80,20 +87,30 @@ const About = () => {
             <div className="stat">
               <FaUsers className="stat-icon" />
               <div>
-                <h2><CountUp start={0} end={450} duration={5} />+</h2>
+                <h2>
+                  <CountUp start={0} end={450} duration={5} />+
+                </h2>
                 <p>Customers</p>
               </div>
             </div>
             <div className="stat">
               <FaShieldAlt className="stat-icon" />
               <div>
-                <h2><CountUp start={0} end={443} duration={5} />+</h2>
+                <h2>
+                  <CountUp start={0} end={443} duration={5} />+
+                </h2>
                 <p>Positive Feedbacks</p>
               </div>
             </div>
           </div>
         </div>
       </section>
+
+      {/* Footer will now fade-in too */}
+      <footer data-aos="fade-up">
+        {/* If you're using a Footer component, wrap it like this: */}
+        {/* <div data-aos="fade-up"><Footer /></div> */}
+      </footer>
     </div>
   )
 }
