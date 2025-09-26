@@ -215,7 +215,7 @@
 
 @media (max-width: 992px) {
   .about-hero {
-    height: 35vh;
+    height: 40vh;
   }
 
   .about-title {
@@ -223,12 +223,4 @@
   }
 }
 
-@media (max-width: 480px) {
-  .about-hero {
-    height: 25vh;
-  }
 
-  .about-title {
-    font-size: clamp(1.2rem, 4vw, 2rem);
-  }
-}
