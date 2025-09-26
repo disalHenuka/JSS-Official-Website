@@ -11,7 +11,6 @@ const imageList = [
     description:
       'Our colour coatings are engineered for maximum resistance to corrosion, UV exposure, and chemicals — ensuring your surfaces stay protected and polished.',
   },
-  
   {
     src: '/slider-images/image3.jpg',
     title: 'Custom Finishes for Every Industry',
@@ -28,7 +27,7 @@ const imageList = [
 
 const ImageSlider = () => {
   return (
-    <div className="slider-container"data-aos="fade-in" data-aos-delay="200">
+    <div className="slider-container" data-aos="fade-in" data-aos-delay="200">
       <Swiper
         modules={[Navigation, Autoplay]}
         spaceBetween={0}

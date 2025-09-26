@@ -1,9 +1,17 @@
 import '../styles/Home.css'
 import ImageSlider from '../components/ImageSlider'
 import SampleGallery from '../components/SampleGallery'
-
+import { useEffect } from 'react'
 
 const Home = () => {
+  useEffect(() => {
+    document.body.classList.add('home-page')
+
+    return () => {
+      document.body.classList.remove('home-page')
+    }
+  }, [])
+
   return (
     <div className="home">
       <div className="hero">

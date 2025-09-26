@@ -18,7 +18,7 @@ const Footer = () => {
             <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
               <FaInstagram />
             </a>
-            <a href="https://wa.me/+94769967702" target="_blank" rel="noopener noreferrer">
+            <a href="https://wa.me/+94778230441" target="_blank" rel="noopener noreferrer">
               <FaWhatsapp />
             </a>
             <a href="mailto:info@jsscolourcoatingpvtltd@gmail.com">
@@ -55,7 +55,7 @@ const Footer = () => {
               <a href="tel:+94778230441">077 823 0441</a>
             </span>
             <span>
-              <a href="tel:+94772227702">077 222 7702</a>
+              <a href="tel:+94773136118">077 313 6118</a>
             </span>
           </div>
           <p><FaClock /> Mon – Sat: 8.30am – 5pm</p>

@@ -32,16 +32,16 @@ const About = () => {
         {/* Left: Description Box */}
         <div className="about-box" data-aos="fade-up">
           <p>
-            Established since 2016, <strong>JSS Colour Coating Pvt (Ltd)</strong> is a trusted Sri Lankan company specializing in <strong>powder coating</strong> and surface finishing solutions. We offer a <strong>wide selection of colors and textures</strong> tailored to meet diverse industry needs and lifestyle preferences.
+            Established since 2016, <strong>JSS Colour Coating Pvt (Ltd)</strong> is a trusted Sri Lankan company specializing in powder coating and surface finishing solutions. We offer a wide selection of colors and textures tailored to meet diverse industry needs and lifestyle preferences.
           </p>
           <p>
-            Our strength lies in combining <strong>modern coating technology</strong> with a highly skilled team to deliver <strong>durable, aesthetic, and cost-effective</strong> finishes for metal products.
+            Our strength lies in combining modern coating technology with a highly skilled team to deliver <strong>Durable, Aesthetic, and Cost-effective</strong> finishes for metal products.
           </p>
           <p>
-            With over a decade of experience, we have built a solid reputation for <strong>quality, reliability, and on-time delivery</strong> — serving both individual and commercial clients across Sri Lanka.
+            With over a decade of experience, we have built a solid reputation for <strong>Quality, Reliability, and On-time Delivery</strong> serving both individual and commercial clients across Sri Lanka.
           </p>
           <p>
-            At JSS, we are committed to <strong>continuous innovation, customer satisfaction,</strong> and raising the standard of protective surface solutions in the industry.
+            At JSS, we are committed to <strong>Continuous innovation, Customer satisfaction,</strong> and raising the standard of protective surface solutions in the industry.
           </p>
         </div>
 

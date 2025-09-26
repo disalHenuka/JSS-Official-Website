@@ -21,7 +21,9 @@ const Header = () => {
   return (
     <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
       <div className="logo-container">
-        <img src={logo} alt="JSS Logo" className={`logo ${isScrolled ? 'scrolled' : ''}`} />
+        <NavLink to="/" onClick={closeMenu}>
+          <img src={logo} alt="JSS Logo" className={`logo ${isScrolled ? 'scrolled' : ''}`} />
+        </NavLink>
       </div>
 
       <div className="menu-toggle" onClick={toggleMenu}>
