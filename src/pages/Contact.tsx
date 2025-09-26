@@ -102,7 +102,7 @@ const Contact = () => {
       </div>
 
       {/* === MAP === */}
-      <div className="map-wrapper" data-aos="fade-up">
+      <div className="map-wrapper">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1980.8315562077207!2d79.90623050273955!3d6.8107692022195225!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae245dc6df2d305%3A0x3c0f137701a8b03f!2sJss%20colour%20coating%20pvt%20ltd!5e0!3m2!1sen!2slk!4v1758713202271!5m2!1sen!2slk" 
           allowFullScreen
