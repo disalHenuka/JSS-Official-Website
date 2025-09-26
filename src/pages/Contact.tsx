@@ -25,9 +25,7 @@ const Contact = () => {
         <div className="contact-hero-overlay" />
         <div
           className="contact-hero-content"
-          {...(isMobile
-            ? { 'data-aos': 'fade-down', 'data-aos-delay': '0' } // fade-down instead of fade-up
-            : {})}
+          {...(isMobile ? { 'data-aos': 'fade-up' } : {})} // mobile: hero only
         >
           <h1>Get in Touch with Us</h1>
           <p>
