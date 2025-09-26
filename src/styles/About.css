@@ -184,11 +184,13 @@
   .about-content {
     flex-direction: column;
     align-items: center;
-    padding: 3rem 1rem;
+    padding: 1rem 1rem;
   }
 
   .about-box {
-    max-width: 85%;
+    margin-top: 30px;
+    max-width: 90%;
+    padding-inline: 20px;
   }
 
   .about-side-info {

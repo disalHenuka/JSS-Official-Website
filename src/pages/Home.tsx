@@ -1,10 +1,24 @@
 import '../styles/Home.css'
 import ImageSlider from '../components/ImageSlider'
 import SampleGallery from '../components/SampleGallery'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import homeLogo from '../assets/logo1.png'
 
 const Home = () => {
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768)
+    }
+
+    // Set initially
+    handleResize()
+
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
+
   useEffect(() => {
     document.body.classList.add('home-page')
     return () => {
@@ -32,10 +46,12 @@ const Home = () => {
           guns to ensure high-quality, durable finishes for a wide range of applications.
         </p>
       </section>
-
-      <ImageSlider data-aos="fade-up" data-aos-delay="500" />
-
-      <SampleGallery data-aos="fade-up" data-aos-delay="300" />
+      <div{...(!isMobile && { 'data-aos': 'fade-up', 'data-aos-delay': '500' })}> 
+        <ImageSlider/>
+      </div>
+      <div{...(!isMobile && { 'data-aos': 'fade-up', 'data-aos-delay': '300' })}> 
+        <SampleGallery/>
+      </div>
 
       <div className="view-services-btn-container" data-aos="fade-up" data-aos-delay="350">
         <a href="/services" className="view-services-btn">

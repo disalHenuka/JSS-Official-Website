@@ -48,7 +48,7 @@ const About = () => {
         {/* Right: Highlight Box + Stats */}
         <div className="about-side-info">
           {/* Highlight Box */}
-          <div className="highlight-box" data-aos="fade-left">
+          <div className="highlight-box" data-aos="fade-up" data-aos-delay="100">
             <h3>We Ensure Your Products Are</h3>
             <ul>
               <li>✔ Affordable</li>
