@@ -83,7 +83,10 @@ const About = () => {
           </div>
 
           {/* Stats */}
-          <div className="about-stats" data-aos="fade-up" data-aos-delay="200">
+          <div className="about-stats" {...(!isMobile && {
+            'data-aos': 'fade-up',
+            'data-aos-delay': '100',
+          })}>
             <div className="stat">
               <FaUsers className="stat-icon" />
               <div>
