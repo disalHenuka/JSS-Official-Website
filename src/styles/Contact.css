@@ -205,9 +205,3 @@
   }
 }
 
-@media screen and (max-width: 768px) {
-  .contact-hero-content[data-aos] {
-    transform: translateY(0) !important; /* removes push down */
-    opacity: 1 !important; /* ensures it's visible immediately */
-  }
-}
