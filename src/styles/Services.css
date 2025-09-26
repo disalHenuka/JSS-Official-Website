@@ -145,17 +145,17 @@
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 551px) {
   .services-hero {
-    height: 30vh;
+    height: 40vh;
   }
 
   .services-hero-content .title {
-    font-size: 2.2rem;
+    font-size: 1.25rem;
   }
 
   .services-hero-content .subtitle {
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
 
   .services-heading {
@@ -165,13 +165,17 @@
 
   .services-grid {
     grid-template-columns: 1fr;
-    gap: 20px;
     padding: 0 1rem 2rem;
+    max-width: 100%;
   }
 
   .service-card {
     border-radius: 12px;
+    margin-inline: 0px;
   }
+  .service-card:hover {
+  transform: scale(1.15);
+}
 
   .service-content {
     padding: 0.8rem;

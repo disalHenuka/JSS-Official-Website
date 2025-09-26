@@ -28,7 +28,7 @@ const Contact = () => {
       {/* === GRID SECTION === */}
       <div className="contact-grid">
         {/* LEFT TEXT INFO */}
-        <div className="contact-info" data-aos="fade-right">
+        <div className="contact-info">
           <div className="contact-section">
             <h4>ADDRESS</h4>
             <p>
@@ -72,7 +72,7 @@ const Contact = () => {
         
 
         {/* RIGHT FORM */}
-        <div className="contact-form-box" data-aos="fade-left">
+        <div className="contact-form-box">
           <form
             action="https://formsubmit.co/jsscolourcoatingpvtltd@gmail.com"
             method="POST"

@@ -80,12 +80,13 @@ body.services-page .header.scrolled .nav-item {
 
 
 .menu-toggle {
-    display: none;
+  display: none;
   cursor: pointer;
   z-index: 1001;
 }
 
 .hamburger {
+  margin-right: -40px;
   width: 30px;
   height: 20px;
   position: relative;
@@ -137,9 +138,9 @@ body.services-page .header.scrolled .nav-item {
 
   .nav {
     position: fixed;
-    top: 80px; /* below header */
-    right: 1rem; /* right-aligned */
-    width: 250px; /* fixed smaller width */
+    top: 80px;
+    right: 2rem; /* <-- MATCHED margin with header logo */
+    width: 250px;
     background-color: rgba(255, 255, 255, 0.97);
     backdrop-filter: blur(10px);
     border-radius: 12px;

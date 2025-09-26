@@ -166,17 +166,14 @@
     text-align: center; /* Optional: center text too */
   }
 
-  .about-box,
-  .about-side-info {
+  .about-box{
     align-items: center;
     justify-content: center;
     text-align: center;
   }
 
-  .about-box h2,
-  .about-box h4,
   .about-box p {
-    text-align: justify;
+    font-size:0.9rem;
   }
 }
 
@@ -192,7 +189,6 @@
 
   .about-box {
     max-width: 85%;
-    text-align: justify;
   }
 
   .about-side-info {
