@@ -91,7 +91,7 @@ const About = () => {
               <FaUsers className="stat-icon" />
               <div>
                 <h2>
-                  <CountUp start={0} end={450} duration={5} />+
+                  <CountUp start={0} end={350} duration={5} />+
                 </h2>
                 <p>Customers</p>
               </div>
@@ -100,7 +100,7 @@ const About = () => {
               <FaShieldAlt className="stat-icon" />
               <div>
                 <h2>
-                  <CountUp start={0} end={443} duration={5} />+
+                  <CountUp start={0} end={94} duration={5} />%
                 </h2>
                 <p>Positive Feedbacks</p>
               </div>
