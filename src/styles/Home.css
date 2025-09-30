@@ -9,11 +9,10 @@
   overflow-x: hidden;
 }
 
-/* === HERO SECTION === */
 .hero {
   position: relative;
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh; /* Changed from height: 100vh to avoid scroll trap */
   background-image: url('../assets/background2.jpg');
   background-size: cover;
   background-position: center;
@@ -137,7 +136,7 @@
   .hero-content h1 {
     font-size: 2.5rem;
   }
-
+A
   .hero-content p {
     font-size: 1rem;
     -webkit-text-stroke: 0.4px black;

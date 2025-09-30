@@ -11,10 +11,7 @@ const Home = () => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 768)
     }
-
-    // Set initially
     handleResize()
-
     window.addEventListener('resize', handleResize)
     return () => window.removeEventListener('resize', handleResize)
   }, [])
@@ -28,6 +25,7 @@ const Home = () => {
 
   return (
     <div className="home">
+      {/* === HERO === */}
       <div className="hero">
         <div className="hero-content" data-aos="fade-up">
           <img src={homeLogo} alt="JSS Logo" className="home-logo" />
@@ -36,7 +34,8 @@ const Home = () => {
         </div>
       </div>
 
-      <section className="sample-text" data-aos="fade-up" data-aos-delay="200">
+      {/* === TEXT SECTION === */}
+      <section className="sample-text" {...(!isMobile && { 'data-aos': 'fade-up', 'data-aos-delay': '200' })}>
         <h2>WHY CHOOSE US</h2>
         <p>
           <b>JSS Colour Coating Pvt (Ltd)</b> is a trusted name in the powder coating
@@ -46,14 +45,19 @@ const Home = () => {
           guns to ensure high-quality, durable finishes for a wide range of applications.
         </p>
       </section>
-      <div{...(!isMobile && { 'data-aos': 'fade-up', 'data-aos-delay': '500' })}> 
-        <ImageSlider/>
-      </div>
-      <div{...(!isMobile && { 'data-aos': 'fade-up', 'data-aos-delay': '300' })}> 
-        <SampleGallery/>
+
+      {/* === IMAGE SLIDER === */}
+      <div {...(!isMobile && { 'data-aos': 'fade-up', 'data-aos-delay': '500' })}>
+        <ImageSlider />
       </div>
 
-      <div className="view-services-btn-container" data-aos="fade-up" data-aos-delay="350">
+      {/* === GALLERY === */}
+      <div {...(!isMobile && { 'data-aos': 'fade-up', 'data-aos-delay': '300' })}>
+        <SampleGallery />
+      </div>
+
+      {/* === BUTTON (fade only on desktop) === */}
+      <div className="view-services-btn-container" {...(!isMobile && { 'data-aos': 'fade-up', 'data-aos-delay': '350' })}>
         <a href="/services" className="view-services-btn">
           View our services &rarr;
         </a>
