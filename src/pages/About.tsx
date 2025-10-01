@@ -6,16 +6,50 @@ import CountUp from 'react-countup'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 
+import dayjs from 'dayjs'
+import relativeTime from 'dayjs/plugin/relativeTime'
+dayjs.extend(relativeTime)
+
 const About = () => {
   const [isMobile, setIsMobile] = useState(false)
+  const [feedbackList, setFeedbackList] = useState<any[]>([])
 
   useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768)
-    }
-
+    const handleResize = () => setIsMobile(window.innerWidth <= 768)
     handleResize()
     window.addEventListener('resize', handleResize)
+
+    // Fetch feedback from Google Sheet
+    fetch(
+      'https://docs.google.com/spreadsheets/d/e/2PACX-1vQh9-XypbdgDWTJart_lvaYRiumK1PN0a02UaTa7bbFxXvjuHybhIaSXkWb7bJhV26D7-sT0CxxCNtn/pub?gid=314338060&single=true&output=csv'
+    )
+      .then((res) => res.text())
+      .then((csvText) => {
+        const rows = csvText.split('\n').slice(1)
+
+        const data = rows
+          .map((row) => {
+            const columns = row.split(',')
+            if (columns.length < 5) return null
+
+            const [timestamp, name, email, feedback, rating] = columns
+
+            if (!name?.trim() || !feedback?.trim()) return null // skip blank rows
+
+            return {
+              name: name.trim(),
+              email: email.trim(),
+              feedback: feedback.trim(),
+              rating: parseInt(rating.trim()) || 0,
+              timestamp: timestamp.trim(),
+              timeAgo: timestamp ? dayjs(timestamp.trim()).fromNow() : null,
+            }
+          })
+          .filter(Boolean)
+
+        setFeedbackList(data)
+      })
+
     return () => window.removeEventListener('resize', handleResize)
   }, [])
 
@@ -25,9 +59,7 @@ const About = () => {
 
   useEffect(() => {
     document.body.classList.add('services-page')
-    return () => {
-      document.body.classList.remove('services-page')
-    }
+    return () => document.body.classList.remove('services-page')
   }, [])
 
   return (
@@ -48,20 +80,29 @@ const About = () => {
         {/* Left: Description Box */}
         <div className="about-box" data-aos="fade-up">
           <p>
-            Established since 2016, <strong>JSS Colour Coating Pvt (Ltd)</strong> is a trusted Sri Lankan company specializing in powder coating and surface finishing solutions. We offer a wide selection of colors and textures tailored to meet diverse industry needs and lifestyle preferences.
+            Established since 2016, <strong>JSS Colour Coating Pvt (Ltd)</strong> is a trusted
+            Sri Lankan company specializing in powder coating and surface finishing solutions.
+            We offer a wide selection of colors and textures tailored to meet diverse industry
+            needs and lifestyle preferences.
           </p>
           <p>
-            Our strength lies in combining modern coating technology with a highly skilled team to deliver <strong>Durable, Aesthetic, and Cost-effective</strong> finishes for metal products.
+            Our strength lies in combining modern coating technology with a highly skilled team
+            to deliver <strong>Durable, Aesthetic, and Cost-effective</strong> finishes for metal
+            products.
           </p>
           <p>
-            With over a decade of experience, we have built a solid reputation for <strong>Quality, Reliability, and On-time Delivery</strong> serving both individual and commercial clients across Sri Lanka.
+            With over a decade of experience, we have built a solid reputation for{' '}
+            <strong>Quality, Reliability, and On-time Delivery</strong> serving both individual and
+            commercial clients across Sri Lanka.
           </p>
           <p>
-            At JSS, we are committed to <strong>Continuous innovation, Customer satisfaction,</strong> and raising the standard of protective surface solutions in the industry.
+            At JSS, we are committed to{' '}
+            <strong>Continuous innovation, Customer satisfaction,</strong> and raising the standard
+            of protective surface solutions in the industry.
           </p>
         </div>
 
-        {/* Right: Highlight Box + Stats */}
+        {/* Right: Highlight + Stats */}
         <div
           className="about-side-info"
           {...(!isMobile && {
@@ -82,11 +123,13 @@ const About = () => {
             </ul>
           </div>
 
-          {/* Stats */}
-          <div className="about-stats" {...(!isMobile && {
-            'data-aos': 'fade-up',
-            'data-aos-delay': '100',
-          })}>
+          <div
+            className="about-stats"
+            {...(!isMobile && {
+              'data-aos': 'fade-up',
+              'data-aos-delay': '100',
+            })}
+          >
             <div className="stat">
               <FaUsers className="stat-icon" />
               <div>
@@ -109,10 +152,40 @@ const About = () => {
         </div>
       </section>
 
-      {/* Footer will now fade-in too */}
+      <section className="feedback-section" data-aos="fade-up">
+        <h2>What Our Customers Say</h2>
+
+        <div className="feedback-list">
+          {feedbackList.map((item, index) => (
+            <div key={index} className="feedback-card styled-card">
+              <div className="stars">
+                {'★'.repeat(item.rating || 0)}
+                {'☆'.repeat(5 - (item.rating || 0))}
+              </div>
+              <p className="feedback-text">"{item.feedback}"</p>
+              <p className="feedback-name">
+                <strong>{item.name || 'Anonymous'}</strong>
+              </p>
+              {item.timeAgo && <p className="feedback-time">{item.timeAgo}</p>}
+            </div>
+          ))}
+        </div>
+
+        {/* Feedback Button */}
+        <div className="view-services-btn-container" style={{ marginTop: '40px' }}>
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLScEqWhBQgN-0u1B0_jFM3PQ3-nFM75qhs1G9BWq26eOVdGzIA/viewform"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="view-services-btn"
+          >
+            Give Us Your Feedback
+          </a>
+        </div>
+      </section>
+
       <footer data-aos="fade-up">
-        {/* If you're using a Footer component, wrap it like this: */}
-        {/* <div data-aos="fade-up"><Footer /></div> */}
+        {/* Footer content here */}
       </footer>
     </div>
   )
