@@ -90,6 +90,7 @@ const Footer = () => {
             </span>
           </div>
           <p><FaClock /> Mon – Sat: 8.30am – 5pm</p>
+          <p><FaEnvelope /> jsscolourcoatingpvtltd@gmail.com</p>
           <p className="closed">Sunday: Closed</p>
 
           <div className="map-link">

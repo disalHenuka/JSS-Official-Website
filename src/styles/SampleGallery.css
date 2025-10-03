@@ -37,7 +37,7 @@
 /* ✅ Desktop Hover Zoom */
 @media (hover: hover) and (pointer: fine) {
   .gallery-image:hover {
-    transform: scale(1.15);
+    transform: scale(1.1);
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
   }
 }
