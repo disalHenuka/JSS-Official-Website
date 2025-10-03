@@ -5,6 +5,7 @@ import { FaUsers, FaShieldAlt } from 'react-icons/fa'
 import CountUp from 'react-countup'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
+import { useLocation } from 'react-router-dom'
 
 import dayjs from 'dayjs'
 import relativeTime from 'dayjs/plugin/relativeTime'
@@ -14,44 +15,48 @@ const About = () => {
   const [isMobile, setIsMobile] = useState(false)
   const [feedbackList, setFeedbackList] = useState<any[]>([])
 
+  const location = useLocation()
+
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth <= 768)
     handleResize()
     window.addEventListener('resize', handleResize)
 
-    // Fetch feedback from Google Sheet
-    fetch(
-      'https://docs.google.com/spreadsheets/d/e/2PACX-1vQh9-XypbdgDWTJart_lvaYRiumK1PN0a02UaTa7bbFxXvjuHybhIaSXkWb7bJhV26D7-sT0CxxCNtn/pub?gid=314338060&single=true&output=csv'
-    )
-      .then((res) => res.text())
-      .then((csvText) => {
-        const rows = csvText.split('\n').slice(1)
+    // Fetch feedback from Google Sheet every time route changes to About
+    if (location.pathname === '/about') {
+      fetch(
+        'https://docs.google.com/spreadsheets/d/e/2PACX-1vQh9-XypbdgDWTJart_lvaYRiumK1PN0a02UaTa7bbFxXvjuHybhIaSXkWb7bJhV26D7-sT0CxxCNtn/pub?gid=314338060&single=true&output=csv'
+      )
+        .then((res) => res.text())
+        .then((csvText) => {
+          const rows = csvText.split('\n').slice(1)
 
-        const data = rows
-          .map((row) => {
-            const columns = row.split(',')
-            if (columns.length < 5) return null
+          const data = rows
+            .map((row) => {
+              const columns = row.split(',')
+              if (columns.length < 5) return null
 
-            const [timestamp, name, email, feedback, rating] = columns
+              const [timestamp, name, email, feedback, rating] = columns
 
-            if (!name?.trim() || !feedback?.trim()) return null // skip blank rows
+              if (!name?.trim() || !feedback?.trim()) return null
 
-            return {
-              name: name.trim(),
-              email: email.trim(),
-              feedback: feedback.trim(),
-              rating: parseInt(rating.trim()) || 0,
-              timestamp: timestamp.trim(),
-              timeAgo: timestamp ? dayjs(timestamp.trim()).fromNow() : null,
-            }
-          })
-          .filter(Boolean)
+              return {
+                name: name.trim(),
+                email: email.trim(),
+                feedback: feedback.trim(),
+                rating: parseInt(rating.trim()) || 0,
+                timestamp: timestamp.trim(),
+                timeAgo: timestamp ? dayjs(timestamp.trim()).fromNow() : null,
+              }
+            })
+            .filter(Boolean)
 
-        setFeedbackList(data)
-      })
+          setFeedbackList(data)
+        })
+    }
 
     return () => window.removeEventListener('resize', handleResize)
-  }, [])
+  }, [location])
 
   useEffect(() => {
     AOS.init({ duration: 1000 })
