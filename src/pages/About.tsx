@@ -156,8 +156,12 @@ const About = () => {
           </div>
         </div>
       </section>
-      <div {...(!isMobile && { 'data-aos': 'fade-up', 'data-aos-delay': '500' })}>
-        <section className="feedback-section" data-aos="fade-up">
+      <div
+        {...(!isMobile
+          ? { 'data-aos': 'fade-up', 'data-aos-delay': '500' }
+          : {})}
+      >
+        <section className="feedback-section">
           <h2>What Our Customers Say</h2>
 
           <div className="feedback-list">
@@ -188,9 +192,8 @@ const About = () => {
             </a>
           </div>
         </section>
-
-      </div>      
-      
+      </div>   
+            
       <footer data-aos="fade-up">
         {/* Footer content here */}
       </footer>
