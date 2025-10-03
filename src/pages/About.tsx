@@ -156,39 +156,41 @@ const About = () => {
           </div>
         </div>
       </section>
+      <div {...(!isMobile && { 'data-aos': 'fade-up', 'data-aos-delay': '500' })}>
+        <section className="feedback-section" data-aos="fade-up">
+          <h2>What Our Customers Say</h2>
 
-      <section className="feedback-section" data-aos="fade-up">
-        <h2>What Our Customers Say</h2>
-
-        <div className="feedback-list">
-          {feedbackList.map((item, index) => (
-            <div key={index} className="feedback-card styled-card">
-              <div className="stars">
-                {'★'.repeat(item.rating || 0)}
-                {'☆'.repeat(5 - (item.rating || 0))}
+          <div className="feedback-list">
+            {feedbackList.map((item, index) => (
+              <div key={index} className="feedback-card styled-card">
+                <div className="stars">
+                  {'★'.repeat(item.rating || 0)}
+                  {'☆'.repeat(5 - (item.rating || 0))}
+                </div>
+                <p className="feedback-text">"{item.feedback}"</p>
+                <p className="feedback-name">
+                  <strong>{item.name || 'Anonymous'}</strong>
+                </p>
+                {item.timeAgo && <p className="feedback-time">{item.timeAgo}</p>}
               </div>
-              <p className="feedback-text">"{item.feedback}"</p>
-              <p className="feedback-name">
-                <strong>{item.name || 'Anonymous'}</strong>
-              </p>
-              {item.timeAgo && <p className="feedback-time">{item.timeAgo}</p>}
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
 
-        {/* Feedback Button */}
-        <div className="view-services-btn-container" style={{ marginTop: '40px' }}>
-          <a
-            href="https://docs.google.com/forms/d/e/1FAIpQLScEqWhBQgN-0u1B0_jFM3PQ3-nFM75qhs1G9BWq26eOVdGzIA/viewform"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="view-services-btn"
-          >
-            Give Us Your Feedback
-          </a>
-        </div>
-      </section>
+          {/* Feedback Button */}
+          <div className="view-services-btn-container" style={{ marginTop: '40px' }}>
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLScEqWhBQgN-0u1B0_jFM3PQ3-nFM75qhs1G9BWq26eOVdGzIA/viewform"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="view-services-btn"
+            >
+              Give Us Your Feedback
+            </a>
+          </div>
+        </section>
 
+      </div>      
+      
       <footer data-aos="fade-up">
         {/* Footer content here */}
       </footer>
