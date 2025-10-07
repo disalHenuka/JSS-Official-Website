@@ -181,7 +181,7 @@ const About = () => {
           </div>
 
           {/* Feedback Button */}
-          <div className="view-services-btn-container" style={{ marginTop: '40px' }}>
+          <div className="view-services-btn-container" style={{ marginTop: '100px' }}>
             <a
               href="https://docs.google.com/forms/d/e/1FAIpQLScEqWhBQgN-0u1B0_jFM3PQ3-nFM75qhs1G9BWq26eOVdGzIA/viewform"
               target="_blank"

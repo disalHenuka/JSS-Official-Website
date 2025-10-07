@@ -71,14 +71,14 @@
     z-index: 1;
   }
   .slider-text {
-  position: absolute;
-  z-index: 2;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  color: white;
-  padding: 0.5rem 1rem;
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    padding: 0.5rem 1rem;
   }
 
   .slider-text h2 {
@@ -89,7 +89,7 @@
   }
 
   .slider-text p {
-    font-size: 13px;
+    font-size: 15px;
     margin-inline: -60px;
   }
 }

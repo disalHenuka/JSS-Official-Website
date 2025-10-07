@@ -58,31 +58,35 @@ const Contact = () => {
               <p>jsscolourcoatingpvtltd@gmail.com</p>
             </div>
 
-            <div className="contact-social-icons">
-              <a href="https://web.facebook.com/p/J-S-S-Colour-Coating-100070770136653/?_rdc=1&_rdr#" target="_blank" rel="noopener noreferrer">
-                <FaFacebookF />
-              </a>
+            <div className="contact-section">
+              <h4>Contact us on</h4>
+              <div className="contact-social-icons">
+                <a href="https://web.facebook.com/p/J-S-S-Colour-Coating-100070770136653/?_rdc=1&_rdr#" target="_blank" rel="noopener noreferrer">
+                  <FaFacebookF />
+                </a>
 
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-                <FaInstagram />
-              </a>
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+                  <FaInstagram />
+                </a>
 
-              <a href="https://wa.me/+94769967702" target="_blank" rel="noopener noreferrer">
-                <FaWhatsapp />
-              </a>
+                <a href="https://wa.me/+94769967702" target="_blank" rel="noopener noreferrer">
+                  <FaWhatsapp />
+                </a>
 
-              <a href="https://www.tiktok.com/@yourtiktokhandle" target="_blank" rel="noopener noreferrer">
-                <SiTiktok />
-              </a>
+                <a href="https://www.tiktok.com/@yourtiktokhandle" target="_blank" rel="noopener noreferrer">
+                  <SiTiktok />
+                </a>
 
-              <a
-                href="https://mail.google.com/mail/?view=cm&fs=1&to=info@jsscolourcoatingpvtltd@gmail.com&su=Service%20Inquiry&body=Hi%20JSS%20Team%2C%0A%0AI%20am%20interested%20in%20your%20coating%20services.%20Please%20contact%20me%20back.%0A%0AThanks."
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FaEnvelope />
-              </a>
+                <a
+                  href="https://mail.google.com/mail/?view=cm&fs=1&to=info@jsscolourcoatingpvtltd@gmail.com&su=Service%20Inquiry&body=Hi%20JSS%20Team%2C%0A%0AI%20am%20interested%20in%20your%20coating%20services.%20Please%20contact%20me%20back.%0A%0AThanks."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaEnvelope />
+                </a>
+              </div>
             </div>
+            
             <div className="contact-quote">
               <p>
                 <em>"Coming together is a beginning; keeping together is progress; working together is success."</em>
@@ -102,16 +106,16 @@ const Contact = () => {
               <input type="hidden" name="_captcha" value="false" />
               <input type="hidden" name="_template" value="box" />
 
-              <label>Name*</label>
+              <label>Name<span className="required-star">*</span></label>
               <input type="text" name="Name" required />
 
-              <label>Email Address*</label>
+              <label>Email Address<span className="required-star">*</span></label>
               <input type="email" name="Email" required />
 
-              <label>Phone</label>
-              <input type="tel" name="Phone" />
+              <label>Phone<span className="required-star">*</span></label>
+              <input type="tel" name="Phone" required/>
 
-              <label>Company Name*</label>
+              <label>Company Name</label>
               <input type="text" name="Company" required />
 
               <label>Message</label>
@@ -119,6 +123,12 @@ const Contact = () => {
 
               <button type="submit">SUBMIT</button>
             </form>
+            <p className="form-note">
+              <em>
+                If you’re looking for a quotation on any product, feel free to submit the form above.
+                Our team will get back to you as quickly as possible with the necessary details.
+              </em>
+          </p>
           </div>
         </div>
 

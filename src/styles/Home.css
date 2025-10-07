@@ -89,6 +89,8 @@
   display: flex;
   justify-content: center;
   margin: 60px 0;
+  margin-top: 100px;
+  margin-bottom: 100px;
 }
 
 .view-services-btn {
@@ -119,9 +121,10 @@
 @media screen and (max-width: 768px) {
   .hero {
     flex-direction: column;
+    min-height: 500px;
     height: auto;
-    padding: 2rem 1rem;
-    gap: 2rem;
+    padding: 0.5rem 1rem;
+    gap: 1rem;
     text-align: center;
   }
 
@@ -143,10 +146,10 @@ A
   }
 
   .sample-text h2 {
-    font-size: 19px;
+    font-size: 21px;
   }
 
   .sample-text p {
-    font-size: 12px;
+    font-size: 15px;
   }
 }
