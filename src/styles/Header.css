@@ -70,11 +70,8 @@
   z-index: 2;
 }
 
-body.home-page .nav-item {
-  color: rgb(0, 0, 0);
-}
 
-body.services-page .header.scrolled .nav-item {
+.header.scrolled .nav-item {
   color: black !important;
 }
 

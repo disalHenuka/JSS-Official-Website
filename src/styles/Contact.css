@@ -6,7 +6,7 @@
 
 /* === HERO === */
 .contact-hero {
-  background: url('../assets/contact-bg.jpg') center/cover no-repeat;
+  background: url('../assets/contact-bg.png') center/cover no-repeat;
   height: 40vh;
   position: relative;
   display: flex;
