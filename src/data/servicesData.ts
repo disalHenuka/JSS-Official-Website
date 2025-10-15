@@ -8,7 +8,7 @@ const services = [
   {
     title: 'Powder Coating',
     description:
-      'Our state of the art powder coating provides a tough, uniform, and high quality finish that resists chipping, fading, and corrosion. It’s the perfect solution for metal parts and surfaces that require long-lasting color and protection even in harsh environments.',
+      'Our state of the art powder coating provides a tough, uniform, and high quality finish that resists chipping, fading, and corrosion. It’s the perfect solution for metal parts and aluminium surfaces that require long-lasting color and protection even in harsh environments.',
     image: powderCoating,
   },
   {
@@ -26,7 +26,7 @@ const services = [
   {
     title: 'Component Capacities',
     description:
-      'Our facility supports components up to 1,500mm x 1,000mm x 550mm. Equipped with a 21-foot curing oven and full pre-treatment line, we ensure top-quality finishes using both Gema and Chinese dual spray systems for consistent, high-performance results.',
+      'Our facility supports components up to 6400mm(21ft) x 1,200mm(4ft) x 2100mm(7ft). Equipped with a 21-foot curing oven and full pre-treatment line, we ensure top-quality finishes using both Gema and Chinese dual spray systems for consistent, high-performance results.',
     image: capacity,
   },
   {

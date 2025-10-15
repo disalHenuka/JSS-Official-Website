@@ -93,7 +93,7 @@ const About = () => {
           <p>
             Our strength lies in combining modern coating technology with a highly skilled team
             to deliver <strong>Durable, Aesthetic, and Cost-effective</strong> finishes for metal
-            products.
+            and aluminium products.
           </p>
           <p>
             With over a decade of experience, we have built a solid reputation for{' '}

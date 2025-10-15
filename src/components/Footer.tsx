@@ -89,7 +89,7 @@ const Footer = () => {
               <a href="tel:+94773136118">077 313 6118</a>
             </span>
           </div>
-          <p><FaClock /> Mon – Sat: 8.30am – 5pm</p>
+          <p><FaClock /> Mon – Sat: 8.30am – 6pm</p>
           <p><FaEnvelope /> jsscolourcoatingpvtltd@gmail.com</p>
           <p className="closed">Sunday: Closed</p>
 

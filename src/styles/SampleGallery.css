@@ -34,11 +34,26 @@
   transition: transform 0.4s ease, box-shadow 0.4s ease;
   cursor: pointer;
 }
+.gallery-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.gallery-description {
+  margin-top: 11px;
+  font-size: 0.8rem;
+  color: #333;
+  font-weight: 400;
+  letter-spacing: 0.6px;
+  font-style: italic;
+}
 
 /* ✅ Desktop Hover Zoom */
 @media (hover: hover) and (pointer: fine) {
   .gallery-image:hover {
-    transform: scale(1.1);
+    transform: scale(1.08);
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
   }
 }
@@ -46,7 +61,7 @@
 /* ✅ Mobile Tap Zoom */
 @media (max-width: 600px) {
   .gallery-image.zoomed {
-    transform: scale(1.1);
+    transform: scale(1.07);
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
   }
 
