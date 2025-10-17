@@ -7,21 +7,24 @@ const sampleMedia = import.meta.glob('../assets/samples/*.{jpg,jpeg,png,gif,mp4}
 })
 
 const descriptions: string[] = [
-  'Aluminium chair done in RAL 8016',
-  'Expanded Aluminium mesh done in RAL 8016',
-  'Car alloy wheel finished in RAL 9003',
-  'Outdoor railing coated in RAL 9010',
-  'Industrial part coated in RAL 5002',
-  'Aluminium chair done in RAL 8023',
-  'Car alloy wheel finished in RAL 5017',
-  'Car alloy wheel finished in RAL 7016',
-  'Expanded Aluminium mesh done in RAL 2004',
-  'Industrial part coated in RAL 5002',
-  'Aluminium chair done in RAL 8023',
-  'Metal gate coated in RAL 9005',
-  'Car alloy wheel finished in RAL 7016',
-  'Outdoor railing coated in RAL 9010',
-  'Industrial part coated in RAL 5002',
+  'Aluminium chair done in RAL 8016',//1
+  'Expanded Aluminium mesh done in RAL 8016',//2
+  'Motorbike alloy wheel finished in RAL 9003',//3
+  'Steel table stand finished in RAL 9005 Matt',//4
+  'Motorbike alloy wheel finished in RAL 5021 gloss',//5
+  'Name plate done in RAL 9005',//6
+  'Motorbike engine parts RAL 9005 gloss',//7
+  'sample image',//8
+  'Expanded Aluminium mesh done in RAL 2004',//9
+  'Motorbike alloy wheel finished in RAL 9005 gloss',//10
+  'sample image',//11
+  'Powder coating video',//12  
+  'sample video',//13
+  'sample video',//14
+  'Car alloy wheel finished in RAL 7016',//15
+  'Outdoor railing coated in RAL 9010',//16
+  'Industrial part coated in RAL 5002',//17
+  'Expanded Aluminium mesh done in RAL 2004',//18
 ]
 
 const SampleGallery = (props: React.HTMLAttributes<HTMLDivElement>) => {
