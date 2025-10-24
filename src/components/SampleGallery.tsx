@@ -14,13 +14,9 @@ const descriptions: string[] = [
   'Motorbike alloy wheel finished in RAL 5021 gloss',//5
   'Name plate done in RAL 9005',//6
   'Motorbike engine parts RAL 9005 gloss',//7
-  'sample image',//8
-  'Expanded Aluminium mesh done in RAL 2004',//9
-  'Motorbike alloy wheel finished in RAL 9005 gloss',//10
-  'sample image',//11
-  'Powder coating video',//12  
-  'sample video',//13
-  'sample video',//14
+  'Expanded Aluminium mesh done in RAL 2004',//8
+  'Motorbike alloy wheel finished in RAL 9005 gloss',//9
+  'Powder coating video',//10
   'Car alloy wheel finished in RAL 7016',//15
   'Outdoor railing coated in RAL 9010',//16
   'Industrial part coated in RAL 5002',//17

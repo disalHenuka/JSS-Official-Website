@@ -29,7 +29,7 @@ const Home = () => {
       <div className="hero">
         <div className="hero-content" data-aos="fade-up">
           <img src={homeLogo} alt="JSS Logo" className="home-logo" />
-          <h1>JSS Colour Coating Pvt (Ltd)</h1>
+          <h1>JSS Colour Coating (Pvt) Ltd</h1>
           <p>We provide high-quality durable powder coating solutions.</p>
         </div>
       </div>
@@ -38,7 +38,7 @@ const Home = () => {
       <section className="sample-text" {...(!isMobile && { 'data-aos': 'fade-up', 'data-aos-delay': '200' })}>
         <h2>WHY CHOOSE US</h2>
         <p>
-          <b>JSS Colour Coating Pvt (Ltd)</b> is a trusted name in the powder coating
+          <b>JSS Colour Coating (Pvt) Ltd</b> is a trusted name in the powder coating
           industry with over <b>8 years of experience</b>. Conveniently located near
           <b> Piliyandala Junction</b>, our facility is equipped with a <b>21-foot oven</b> and a
           complete pre-treatment setup. We utilize both Gema and Chinese dual spray

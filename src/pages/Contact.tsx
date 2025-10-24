@@ -44,7 +44,7 @@ const Contact = () => {
               <h4>ADDRESS</h4>
               <p>
                 No.19/17, Battiaywattha Road,<br />
-                Karadiyana Rd, Piliyandala.
+                Karadiyana, Piliyandala.
               </p>
             </div>
 
@@ -61,26 +61,43 @@ const Contact = () => {
             <div className="contact-section">
               <h4>Contact us on</h4>
               <div className="contact-social-icons">
-                <a href="https://web.facebook.com/p/J-S-S-Colour-Coating-100070770136653/?_rdc=1&_rdr#" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.facebook.com/share/1PdW9gSMSc/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer">
                   <FaFacebookF />
                 </a>
 
-                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.instagram.com/jss.colourcoating/" target="_blank" rel="noopener noreferrer">
                   <FaInstagram />
                 </a>
 
-                <a href="https://wa.me/+94769967702" target="_blank" rel="noopener noreferrer">
+                <a href="https://wa.me/+94773136118" target="_blank" rel="noopener noreferrer">
                   <FaWhatsapp />
                 </a>
 
-                <a href="https://www.tiktok.com/@yourtiktokhandle" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.tiktok.com/@jsscolourcoating" target="_blank" rel="noopener noreferrer">
                   <SiTiktok />
                 </a>
 
                 <a
-                  href="https://mail.google.com/mail/?view=cm&fs=1&to=info@jsscolourcoatingpvtltd@gmail.com&su=Service%20Inquiry&body=Hi%20JSS%20Team%2C%0A%0AI%20am%20interested%20in%20your%20coating%20services.%20Please%20contact%20me%20back.%0A%0AThanks."
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="#"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    navigator.clipboard.writeText("jsscolourcoatingpvtltd@gmail.com");
+                    const tooltip = document.createElement("span");
+                    tooltip.textContent = "Copied!";
+                    tooltip.style.position = "absolute";
+                    tooltip.style.color = "#fff";
+                    tooltip.style.background = "#1565c0";
+                    tooltip.style.padding = "4px 10px";
+                    tooltip.style.borderRadius = "6px";
+                    tooltip.style.fontSize = "0.9rem";
+                    tooltip.style.top = e.pageY - 30 + "px";
+                    tooltip.style.left = e.pageX + "px";
+                    tooltip.style.transition = "opacity 0.6s ease";
+                    document.body.appendChild(tooltip);
+                    setTimeout(() => (tooltip.style.opacity = "0"), 1000);
+                    setTimeout(() => tooltip.remove(), 1600);
+                  }}
+                  className="email-link"
                 >
                   <FaEnvelope />
                 </a>
